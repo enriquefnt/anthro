@@ -15,13 +15,13 @@ NOMBRES_MASCULINOS = [
     'Juan', 'Carlos', 'Miguel', 'José', 'Antonio', 'Francisco', 'Manuel', 'David', 'Javier', 'Daniel',
     'Pedro', 'Luis', 'Diego', 'Alejandro', 'Fernando', 'Raúl', 'Sergio', 'Pablo', 'Angel', 'Roberto',
     'Enrique','Gustavo','Mario','Kevin','Leonardo', 'Esteban','Roque','Jonathan','Armando','Joel',
-    'Hector'
+    'Hector','Joaquin','Roque','Fernando','Jorge'
 ]
 NOMBRES_FEMENINOS = [
     'María', 'Ana', 'Carmen', 'Laura', 'Sofía', 'Isabel', 'Pilar', 'Cristina', 'Elena', 
     'Marta', 'Sara', 'Paula', 'Clara', 'Beatriz', 'Rosa', 'Teresa', 'Julia', 'Nuria', 'Alba',
     'Rosa','Gabriela','Estela','Yesica','Angeles','Margarita','Estela','Luisa','Patricia','Estela',
-    'Fernanda'
+    'Fernanda','Angeles','Florencia','Montserrat','Paz','Graciela','Paola','Sandra'
 
 ]
 
@@ -148,7 +148,7 @@ def calcular_peso(edad_dias, sexo, z_peso, z_imc, df, talla=None):
 
 # Generar 150 datos
 datos = []
-while len(datos) < 300:
+while len(datos) < 400:
     fecha_nac = random_date(fecha_inicio, fecha_fin)
     edad_dias = calcular_edad_dias(fecha_nac, fecha_referencia)
     if edad_dias < 1 or edad_dias > (365.25 * 18):
@@ -182,5 +182,5 @@ with open('datos_generados.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=';')
     writer.writerow(["ID", "Nombre", "Fecha_Nacimiento", "Fecha_Control", "Peso_Kg", "Talla_cm", "Sexo"])
     writer.writerows(datos)
-print("\nDatos guardados en 'datos_generados.csv' (150 filas)")
+print("\nDatos guardados en 'datos_generados.csv' (400 filas)")
 
